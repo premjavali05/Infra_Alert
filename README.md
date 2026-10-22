@@ -27,7 +27,7 @@ A civic grievance reporting and resolution platform that helps citizens submit i
 ### Citizen Complaint Form
 ![Citizen Complaint Form1](docs/screenshots/Complaint_Form1.png)
 
-- View the deatiled images and complaint recipts in the docs/screenshots.
+- View the deatiled images and complaint recipts in the `docs/screenshots`.
 
 ### Citizen Dashboard
 ![Citizen Dashboard](docs/screenshots/User_Dashboard.png)
@@ -35,7 +35,7 @@ A civic grievance reporting and resolution platform that helps citizens submit i
 ### Authority Dashboard
 ![Authority Dashboard](docs/screenshots/Authority_Dashboard.png)
 
-- View the deatiled images and complaint recipts in the docs/screenshots.
+- View the deatiled images and complaint recipts in the `docs/screenshots`.
 ---
 
 ## ✨ Why Infra-Alert?
