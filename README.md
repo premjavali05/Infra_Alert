@@ -67,6 +67,24 @@ The project was migrated from a PHP/MySQL application to a modern **React + Vite
 
 > Location precision depends on the device and browser location source. A readable address is an interpretation of the selected coordinates, not a guarantee of an exact doorstep location. Users can adjust the location pin before submission.
 
+## 📄 Research Publication
+
+Infra-Alert is also the subject of a research paper published through IEEE.
+
+**Paper:** A Web-Based Public Grievance Redressal System with Image and Geolocation Support
+
+**Publication:** 2025 International Conference on Smart & Sustainable Technology (INCSST)
+
+**Publisher:** IEEE
+
+**Conference location:** Chikodi, India
+
+**DOI:** [10.1109/INCSST64791.2025.11210297](https://doi.org/10.1109/INCSST64791.2025.11210297)
+
+The paper explores a web-based approach to public grievance redressal, including complaint submission, image evidence, geolocation tracking, complaint status monitoring, and authority-side resolution workflows.
+
+[Read the published paper on IEEE Xplore](https://ieeexplore.ieee.org/abstract/document/11210297)
+
 ## 🧰 Technology stack
 
 | Layer | Technologies |
