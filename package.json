@@ -1,0 +1,16 @@
+{
+  "name": "infra-alert-react-postgres",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Infra-Alert migrated from PHP/MySQL to React, Vite, Express and PostgreSQL",
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm --workspace server run dev",
+    "dev:client": "npm --workspace client run dev",
+    "build": "npm --workspace client run build",
+    "start": "npm --workspace server start",
+    "check": "npm --workspace server run check && npm --workspace client run build"
+  },
+  "devDependencies": {"concurrently": "^9.1.2"}
+}

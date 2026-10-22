@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-bar {
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+    }
+
+    .nav-logo img {
+        width: 200px;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #222;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-bar .nav-logo img{
+        width: 150px;
+    }
+    
+    .complaint-table {
+      width: 100%;
+    }
+}

@@ -1,0 +1,213 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Start of Navigation Bar */
+
+.nav-bar {
+    background-color: black;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 8%;
+    height: 2rem;
+}
+    
+.nav-logo {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+  
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.nav-links li {
+  margin-right: 50px;
+}
+  
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+  
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+  
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+  
+.nav-bar .nav-logo img {
+  margin-left: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+}
+
+.nav-links a:hover {
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+}
+
+.bar {
+  height: 4px; /* Thickness of the bars */
+  width: 30px; /* Width of the bars */
+  background-color: white; /* Color of the bars */
+  margin: 4px 0; /* Spacing between bars */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.nav-links.show {
+  display: flex; /* Show when 'show' class is added */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute; /* Positioning for dropdown */
+  top: 70px; /* Below the navbar */
+  right: 0; /* Align to the right */
+  background: #333; /* Slightly opaque for better readability */
+  width: 200px; /* Width of the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Top bar */
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0; /* Middle bar disappears */
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar */
+}
+
+.nav-links li:hover {
+  color: hsl(38, 92%, 58%); /* Change color on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* End of Navigation Bar */
+
+/* Start of Form */
+
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+  }
+  
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+}
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    transform: scale(1.02);
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.state-city{
+  display: flex;
+}
+
+.name-date {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+

@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+    /* Hide the overlay container */
+    .overlay-container1 {
+      display: none;
+    }
+  
+    /* Adjust the form container */
+    .form-container1 {
+      width: 100%;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    .container1 {
+      width: 350px;
+      margin: 10px;
+      margin-right: 10px;
+      overflow: scroll;
+    }
+
+    label{
+        overflow: hidden;
+    }
+
+    .container1 h1{
+        font-size: 20px;
+    }
+    
+    #btn{
+      display: inline-block;
+      cursor: pointer;
+      color: #FFF;
+      padding: 12px 45px;
+      border-radius: 20px;
+    }
+    a{
+      color: #FFF;
+      font-size: 12px;
+    }
+  }
+  

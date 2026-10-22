@@ -1,0 +1,11 @@
+@media screen and (max-width: 768px) {
+    button{
+        margin-left: 125px;
+        width: 50%;
+    }
+
+    button:hover {
+        background-color: hsl(38, 92%, 58%);
+        transform: scale(1.05);
+    }
+}

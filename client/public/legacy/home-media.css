@@ -1,0 +1,236 @@
+/* Global Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    /* Adjust for large tablets and smaller desktops */
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .content, .home-content, .street-content {
+        margin-right: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .image-container img, 
+    .home-image-container img, 
+    .street-image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+/* Tablet and Medium Device Adjustments */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .nav-bar {
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+    }
+
+    .nav-logo img {
+        width: 200px;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #222;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-bar .nav-logo img{
+        width: 150px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 80px 10px;
+    }
+
+    .hero-image {
+        max-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    /* About Section */
+    .about-title, .welcome-title, .contact-title {
+        font-size: 30px;
+        padding-top: 80px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+
+    /* Department Section */
+    .dept-title {
+        font-size: 28px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .street-image-container img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .street-content {
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+
+    /* Contact Section */
+    .contact-section {
+        padding: 80px 10px;
+    }
+
+    .contact-info {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .contact-detail {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-detail i {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 30px 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Mobile Device Adjustments */
+@media screen and (max-width: 480px) {
+    .nav-bar {
+        padding: 1rem 3%;
+    }
+
+    .nav-logo img {
+        width: 150px;
+    }
+
+    .hero-image {
+        max-height: 250px;
+    }
+
+    .about-title, .welcome-title, .contact-title {
+        font-size: 24px;
+        padding-top: 60px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .dept-title {
+        font-size: 22px;
+    }
+
+    .contact-detail p {
+        font-size: 16px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-column p {
+        font-size: 16px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 320px) {
+    .nav-logo img {
+        width: 120px;
+    }
+
+    .nav-links li {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .contact-detail {
+        padding: 10px;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media screen and (max-width: 850px) and (orientation: landscape) {
+    .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-image {
+        max-height: 300px;
+    }
+}

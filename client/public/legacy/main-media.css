@@ -1,0 +1,98 @@
+/* Start of Navigation Media Queries */
+
+@media screen and (max-width: 768px) {
+    .nav-bar{
+      padding: 1rem 8%;
+    }
+
+    .nav-bar .nav-logo img {
+        width: 150px;
+    }
+    
+    .nav-links {
+        display: none;
+        position:absolute; /* add this */
+        top: 100%; /* add this */
+        right: 0px; /* add this */
+        background-color: black; /* add this, adjust color as needed */
+        padding: 20px;
+         /* add this, adjust padding as needed */
+    }
+  
+    .nav-toggle {
+      display: block; /* add this */
+    }
+  
+    .nav-links.show {
+      display: block;
+      flex-direction: column;
+    }
+    
+    .nav-links li{
+      margin-bottom: 30px;
+      align-items: center;
+      font-size: 20px;
+    }
+  
+    .nav-links li:hover {
+      color: hsl(38, 92%, 58%);
+      transform: scale(1.1);
+    }
+  
+    .nav-links {
+      display: none; /* Hidden by default */
+      flex-direction: column; /* Stack links vertically */
+      position: absolute; /* Positioning for dropdown */
+      top: 70px; /* Below the navbar */
+      right: 0; /* Align to the right */
+      background: #333; /* Background color for dropdown */
+      width: 200px; /* Width of the dropdown */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    }
+  
+    .nav-links li {
+      margin-bottom: 20px; /* Space between links in dropdown */
+      margin-right: 0; /* Remove right margin for dropdown */
+    }
+  
+    .nav-links a {
+      color: #fff; /* Ensure text color is white */
+      text-decoration: none; /* Remove underline */
+    }
+  
+    .nav-links a:hover {
+      color: hsl(38, 92%, 58%); /* Change color on hover for dropdown */
+      transform: scale(1.1); /* Scale effect on hover for dropdown */
+    }
+  
+  }
+  
+  /* End of Navigation Media Queries */
+  
+  /* Start of Main Media Queries */
+  
+  @media screen and (max-width: 768px) {
+  
+    .card-grid {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 50px;
+    }
+
+    .card-item h2{
+        margin-bottom: 30px;
+    }
+
+    .complaint-link {
+        margin-bottom: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+  
+      .card-item h2{
+          margin-bottom: 30px;
+        }
+  }
+  
+  /* End of Main Media Queries */

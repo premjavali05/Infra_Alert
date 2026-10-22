@@ -1,0 +1,474 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Start of Navigation Bar */
+
+.nav-bar {
+  background-color: black;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 8%;
+  height: 2rem;
+}
+  
+.nav-logo {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+  
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.nav-links li {
+  margin-right: 50px;
+}
+  
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+  
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+  
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+  
+.nav-bar .nav-logo img {
+  margin-left: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+}
+
+.nav-links a:hover {
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+}
+
+.bar {
+  height: 4px; /* Thickness of the bars */
+  width: 30px; /* Width of the bars */
+  background-color: white; /* Color of the bars */
+  margin: 4px 0; /* Spacing between bars */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.nav-links.show {
+  display: flex; /* Show when 'show' class is added */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute; /* Positioning for dropdown */
+  top: 70px; /* Below the navbar */
+  right: 0; /* Align to the right */
+  background: #333; /* Slightly opaque for better readability */
+  width: 200px; /* Width of the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Top bar */
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0; /* Middle bar disappears */
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar */
+}
+
+.nav-links li:hover {
+  color: hsl(38, 92%, 58%); /* Change color on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+}
+/* End of Navigation Bar */
+
+/* Start of Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: black;
+  background-color: #222; /* Fallback color */
+  padding: 100px 20px; /* Adjust padding as needed */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 600px; /* Limit height */
+  object-fit: cover; /* Cover the area */
+  margin-top: 20px; /* Space between text and image */
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure text is above the image */
+}
+
+.hero-content h1 {
+  font-size: 2.5em; /* Adjust size as needed */
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.2em; /* Adjust size as needed */
+}
+/* End of Hero Section */
+
+/* Start of About Section */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  padding: 20px;
+}
+
+.content {
+  text-align: left;
+  margin-right: 50px;
+}
+
+.about-title {
+  padding-top: 110px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "poppins";
+}
+
+.image-container img {
+  width: 450px;
+  height: 450px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 24px;
+  text-align: justify;
+}
+
+/* End of About Section */
+
+/* Start of Department Section */
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.dept-section {
+  background-color: #222;
+}
+
+.welcome-title {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "poppins";
+}
+
+
+.dept-title{
+  font-size: 35px;
+  font-weight: 1000;
+  font-family: "poppins";
+  color: hsl(38, 92%, 58%);
+}
+
+.home-content {
+  text-align: left;
+  margin-right: 50px;
+}
+
+.home-image-container img {
+  width: 650px;
+  height: 350px;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+.street-content {
+  text-align: left;
+  margin-left: 50px;
+}
+
+.street-image-container img {
+  width: 650px;
+  height: 350px;
+  border-radius: 15px;
+  pointer-events: none;
+}
+/* End of Main Section */
+
+/* Contact Section Styles */
+.contact-section {
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "poppins";
+  margin-bottom: 50px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info {
+  background-color: #333;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-detail i {
+  margin-right: 20px;
+  font-size: 24px;
+  color: hsl(38, 92%, 58%);
+}
+
+.contact-detail p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* @media screen and (max-width: 768px) {
+  .contact-title {
+      font-size: 30px;
+  }
+
+  .contact-detail {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .contact-detail i {
+      margin-bottom: 10px;
+      margin-right: 0;
+  }
+} */
+
+/* End of Contact Section */
+
+/* Footer Styles */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  color: hsl(38, 92%, 58%);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.footer-column p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: hsl(38, 92%, 58%);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: hsl(38, 92%, 58%);
+}
+
+.footer-bottom p{
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-family: "poppins";
+}
+
+/* @media screen and (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-column {
+      margin-bottom: 30px;
+  }
+
+  .social-icons {
+      justify-content: center;
+  }
+} */
+
+/* End of Footer Section */
+
+
+/* Start of Navigation Media Queries */
+
+/* @media screen and (max-width: 768px) {
+  .nav-bar{
+    padding: 1rem 8%;
+  }
+  
+  .nav-links {
+      display: none;
+      position:absolute; 
+      top: 100%; 
+      right: 0px; 
+      background-color: black; 
+      padding: 20px;
+  }
+
+  .nav-toggle {
+    display: block; 
+  }
+
+  .nav-links.show {
+    display: block;
+    flex-direction: column;
+  }
+  
+  .nav-links li{
+    margin-bottom: 30px;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .nav-links li:hover {
+    color: hsl(38, 92%, 58%);
+    transform: scale(1.1);
+  }
+
+  .nav-links {
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 70px; 
+    right: 0; 
+    background: #333; 
+    width: 200px; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  }
+
+  .nav-links li {
+    margin-bottom: 20px; 
+    margin-right: 0; 
+  }
+
+  .nav-links a {
+    color: #fff; 
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: hsl(38, 92%, 58%); 
+    transform: scale(1.1); 
+  }
+
+} */
+
+/* End of Navigation Media Queries */
+

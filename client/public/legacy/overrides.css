@@ -1,0 +1,23 @@
+/* Small, page-specific consistency and React integration fixes after original CSS. */
+.alert{display:block;text-align:left;font-size:14px;line-height:1.45;border-radius:6px;padding:10px 12px;margin:10px 0}
+.alert-error{background:#ffe9ec;color:#9b1c35;border:1px solid #ffc4cf}
+.alert-success{background:#e8fff1;color:#17633a;border:1px solid #b7efce}
+.auth-page .alert{width:100%;max-width:100%;box-sizing:border-box}
+.auth-page button:disabled,.solve-upload-form button:disabled{opacity:.65;cursor:wait}
+.auth-page button span{color:inherit}
+.auth-page #overlayBtn,.auth-page #overlayBtn1{cursor:pointer}
+.home-page .nav-logo a,.citizen-home .nav-logo a,.complaint-page .nav-logo a,.dashboard-page .nav-logo a,.authority-dashboard .nav-logo a,.solve-page .nav-logo a{display:inline-flex;align-items:center}
+.home-page .nav-logo img,.citizen-home .nav-logo img,.complaint-page .nav-logo img,.dashboard-page .nav-logo img,.authority-dashboard .nav-logo img,.solve-page .nav-logo img{object-fit:contain}
+.home-page .nav-links a,.citizen-home .nav-links a,.complaint-page .nav-links a,.dashboard-page .nav-links a,.authority-dashboard .nav-links a,.solve-page .nav-links a{text-decoration:none}
+.nav-logout{display:inline-flex;align-items:center;gap:5px}
+.nav-toggle{border:0;background:transparent;color:#fff;padding:0}
+.nav-toggle span{pointer-events:none}
+.complaint-page .alert{margin:8px 0}
+.complaint-page .location-button{align-self:flex-start}
+.complaint-page .container{height:auto}
+.complaint-page .container input,.complaint-page .container select,.complaint-page .container textarea{box-sizing:border-box}
+.dashboard-title .search-bar{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.dashboard-title .search-bar h1{margin:0}
+.status-navigation a{text-decoration:none}
+.icon-action:disabled{opacity:.5}
+@media(max-width:768px){.home-page .nav-bar .nav-logo img,.citizen-home .nav-bar .nav-logo img,.complaint-page .nav-bar .nav-logo img,.dashboard-page .nav-bar .nav-logo img,.authority-dashboard .nav-bar .nav-logo img,.solve-page .nav-bar .nav-logo img{width:200px}.dashboard-title .search-bar{align-items:flex-start;flex-direction:column}}

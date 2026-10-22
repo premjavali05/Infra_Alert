@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Start of Navigation Bar */
+
+.nav-bar {
+  background-color: black;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 8%;
+  height: 2rem;
+}
+  
+.nav-logo {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+}
+  
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.nav-links li {
+  margin-right: 50px;
+}
+  
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+  
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+  
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+  
+.nav-bar .nav-logo img {
+  margin-left: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+}
+
+.nav-links a:hover {
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+}
+
+.bar {
+  height: 4px; /* Thickness of the bars */
+  width: 30px; /* Width of the bars */
+  background-color: white; /* Color of the bars */
+  margin: 4px 0; /* Spacing between bars */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.nav-links.show {
+  display: flex; /* Show when 'show' class is added */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute; /* Positioning for dropdown */
+  top: 70px; /* Below the navbar */
+  right: 0; /* Align to the right */
+  background: #333; /* Slightly opaque for better readability */
+  width: 200px; /* Width of the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Top bar */
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+  opacity: 0; /* Middle bar disappears */
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar */
+}
+
+.nav-links li:hover {
+  color: hsl(38, 92%, 58%); /* Change color on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+}
+/* End of Navigation Bar */
+
+/* Start of Main Section */
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+.welcome-title {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 1000;
+  font-family: "poppins";
+}
+
+.welcome-title .name-color {
+    color: #ff2770;
+    font-weight: 1000;
+    font-family: "poppins";
+}
+
+.welcome-dept {
+  text-align: center;
+  font-weight: bold;
+  font-weight: 1000;
+  font-family: "poppins";
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 35px;
+  padding: 100px;
+  margin-top: -50px;
+}
+
+.card-item {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card-item img {
+  width: 100%;
+    height: 60%; 
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-item h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff2770;
+  margin-bottom: 50px;
+}
+
+.complaint-link {
+  background-color: hsl(38, 92%, 58%);
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.complaint-link:hover {
+  background-color: #222;
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+}
+
+.card-item:hover {
+  padding: 20px;
+  background: #222;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  box-shadow: 0 0 15px hsl(38, 92%, 58%); 
+  /* box-shadow: 0 0 15px #ff2770; */
+  transition: all 0.5s ease;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* End of Main Section */
+

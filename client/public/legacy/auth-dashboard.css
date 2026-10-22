@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+  }
+  
+  /* Start of Navigation Bar */
+  
+  .nav-bar {
+  background-color: black;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 8%;
+  height: 2rem;
+  }
+  
+  .nav-logo {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  }
+  
+  .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  }
+  
+  .nav-links li {
+  margin-right: 50px;
+  }
+  
+  .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  }
+  
+  .nav-toggle {
+  display: none;
+  cursor: pointer;
+  }
+  
+  .nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  }
+  
+  .nav-bar .nav-logo img {
+  margin-left: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 300px;
+  }
+  
+  .nav-links a:hover {
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+  }
+  
+  .bar {
+  height: 4px; /* Thickness of the bars */
+  width: 30px; /* Width of the bars */
+  background-color: white; /* Color of the bars */
+  margin: 4px 0; /* Spacing between bars */
+  transition: all 0.3s ease; /* Smooth transition */
+  }
+  
+  .nav-links.show {
+  display: flex; /* Show when 'show' class is added */
+  flex-direction: column; /* Stack links vertically */
+  position: absolute; /* Positioning for dropdown */
+  top: 70px; /* Below the navbar */
+  right: 0; /* Align to the right */
+  background: #333; /* Slightly opaque for better readability */
+  width: 200px; /* Width of the dropdown */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  .nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer; /* Indicate it's clickable */
+  }
+  
+  .nav-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Top bar */
+  }
+  
+  .nav-toggle.active .bar:nth-child(2) {
+  opacity: 0; /* Middle bar disappears */
+  }
+  
+  .nav-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Bottom bar */
+  }
+  
+  .nav-links li:hover {
+  color: hsl(38, 92%, 58%); /* Change color on hover */
+  transform: scale(1.1); /* Scale effect on hover */
+  }
+  .dashboard-title {
+    text-align: left;
+    margin: 20px 40px;
+    color: #fff;
+    font-size: 20px;
+    padding-top: 90px;
+    padding-left: 20px;
+    font-family: "poppins";
+  }
+
+  /* Table Styles */
+  .complaint-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #333;
+    border-radius: 10px;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .complaint-table thead {
+    background-color: hsl(38, 92%, 58%);
+    color: black;
+  }
+  
+  .complaint-table th, .complaint-table td {
+    padding: 10px 15px;
+    text-align: center;
+  }
+  
+  .complaint-table tbody tr:nth-child(even) {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* .complaint-table tbody tr:hover {
+    background-color: #f1f1f1;
+  } */
+  
+  .complaint-table th {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .complaint-table td {
+    font-size: 14px;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .complaint-table {
+      width: 100%;
+    }
+  }
+
+.ri-link, .ri-check-line, .ri-check-double-line, .ri-close-line {
+    font-size: 24px;
+    vertical-align: middle;
+    text-align: center;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background: none; /* remove background */
+    border: none; /* remove border */
+    padding: 0; /* remove padding */
+    cursor: pointer; /* add cursor pointer */
+}
+.ri-link:hover {
+    color: hsl(38, 92%, 58%); /* add hover color */
+    transform: scale(1.1); /* add hover effect */
+}
+
+.ri-check-line, .ri-check-double-line, .ri-close-line {
+  font-size: 26px;
+  vertical-align: middle;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: none; /* remove background */
+  border: none; /* remove border */
+  padding: 0; /* remove padding */
+  cursor: pointer; /* add cursor pointer */
+}
+
+button {
+  background: none;
+  color: #fff;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  color: hsl(38, 92%, 58%); 
+  transform: scale(1.1); 
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Filter Section */
+
+.search-bar .filter-form {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 750px;
+}
+
+.search-bar .filter-form input[type="text"] {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.search-bar .filter-form button[type="submit"] {
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar .filter-form button[type="submit"]:hover {
+  background-color: var(--container-color);
+  color: hsl(38, 92%, 58%);
+  transform: scale(1.1);
+}
+
+.search-bar{
+  display: flex;
+}
