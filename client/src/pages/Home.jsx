@@ -90,9 +90,9 @@ export default function Home() {
             <div><span className="section-kicker">Get in touch</span><h2>Questions about using Infra-Alert?</h2><p>Contact the support team using the details below.</p></div>
             <div className="contact-items">
               <a href="mailto:support@infra-alert.com"><i className="ri-mail-line" aria-hidden="true" /><span><small>Email</small>support@infra-alert.com</span></a>
-              <a href="tel:+919380122673"><i className="ri-phone-line" aria-hidden="true" /><span><small>Phone</small>+91 9380122673</span></a>
-              <p><i className="ri-map-pin-line" aria-hidden="true" /><span><small>Location</small>Tilakwadi, Belagavi, Karnataka, India</span></p>
-              <p><i className="ri-time-line" aria-hidden="true" /><span><small>Hours</small>Monday - Friday: 9 AM to 5 PM</span></p>
+              <a href="tel:+919380122673"><i className="ri-phone-line" aria-hidden="true" /><span><small>Phone</small>954XX78XX4</span></a>
+              <p><i className="ri-map-pin-line" aria-hidden="true" /><span><small>Location</small>Belagavi, Karnataka, India</span></p>
+              <p><i className="ri-time-line" aria-hidden="true" /><span><small>Hours</small>Monday - Friday</span></p>
             </div>
           </div>
         </section>
