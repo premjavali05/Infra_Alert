@@ -18,43 +18,24 @@ A civic grievance reporting and resolution platform that helps citizens submit i
 
 ## 📸 Application Screenshots
 
-# Homepage
+### Homepage
 ![Infra-Alert Homepage](docs/screenshots/Home-Page.png)
 
-# Citizen Login
-![Citizen Login](docs/screenshots/User-Login.png)
-
-# Citizen Landing Page
+### Citizen Landing Page
 ![Citizen Landing Page](docs/screenshots/User_Landing_Page.png)
 
-# Citizen Complaint Form
+### Citizen Complaint Form
 ![Citizen Complaint Form1](docs/screenshots/Complaint_Form1.png)
 
-# Citizen Complaint Form
-![Citizen Complaint Form2](docs/screenshots/Complaint_Form2.png)
+- View the deatiled images and complaint recipts in the docs/screenshots.
 
-# Citizen Complaint Form
-![Citizen Complaint Form3](docs/screenshots/Complaint_Form3.png)
-
-# Citizen Dashboard
+### Citizen Dashboard
 ![Citizen Dashboard](docs/screenshots/User_Dashboard.png)
 
-# Authority Login
-![Authority Login](docs/screenshots/Authority_Login.png)
-
-# Authority Dashboard
+### Authority Dashboard
 ![Authority Dashboard](docs/screenshots/Authority_Dashboard.png)
 
-# Authority Complaint Details
-![Authority Complaint Details1](docs/screenshots/Authority_Complaint_Details1.png)
-
-# Authority Complaint Details
-![Authority Complaint Details2](docs/screenshots/Authority_Complaint_Details2.png)
-
-# Authority Complaint Details
-![Authority Complaint Details3](docs/screenshots/Authority_Complaint_Details3.png)
-
-View the other images and complaint recipts in the docs/screenshots.
+- View the deatiled images and complaint recipts in the docs/screenshots.
 ---
 
 ## ✨ Why Infra-Alert?
