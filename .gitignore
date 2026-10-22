@@ -6,5 +6,4 @@ dist/
 server/uploads/*
 !server/uploads/.gitkeep
 .DS_Store
-server/schema.sql
 server/schema_old.sql

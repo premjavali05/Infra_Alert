@@ -1,75 +1,172 @@
-# Infra-Alert — React + Vite + Express + PostgreSQL
+<div align="center">
 
-This is a migration of the uploaded Infra-Alert PHP/MySQL project. The existing page styling and media assets are retained where possible; the PHP endpoints are rewritten as Express APIs. Table/column names used by the PHP source are preserved (`u_register`, `auth_register`, `complaint`, `save_location`, `solved_img`).
+# Infra-Alert
 
-## Stack
+### Report civic issues. Track progress. Build better communities.
 
-- React 18 + Vite
-- Node.js + Express
-- PostgreSQL (`pg` driver)
-- Cookie-based Express sessions for the local application
-- Optional Cloudinary image storage; local file storage works without credentials
-- PDFKit complaint reports
+A civic grievance reporting and resolution platform that helps citizens submit infrastructure complaints, follow their progress, and gives authorities a focused workspace to review and resolve reported issues.
 
-## Requirements
+[Features](#-what-it-does) · [Tech Stack](#-technology-stack) · [Run Locally](#-run-locally) · [Configuration](#-environment-configuration) · [Project Structure](#-project-structure)
 
-- Node.js 20 or newer
-- PostgreSQL 14 or newer, running locally
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=20232A)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?logo=vite&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Status](https://img.shields.io/badge/Project-Portfolio%20Project-0F766E)
 
-## Run locally on Windows
+</div>
 
-1. Install PostgreSQL and remember the database password you set.
-2. Create a database called `infra_alert` in pgAdmin, or from a terminal:
+---
 
-   ```powershell
-   createdb -U postgres infra_alert
-   ```
+## ✨ Why Infra-Alert?
 
-3. Open the project folder in VS Code. In PowerShell, copy the environment template:
+Civic issues such as damaged roads, drainage problems, garbage accumulation, and faulty streetlights can be difficult to report and follow up on. Infra-Alert provides a single digital workflow for reporting an issue, attaching evidence, sharing its location, and tracking the authority's response.
 
-   ```powershell
-   Copy-Item server/.env.example server/.env
-   ```
+The project was migrated from a PHP/MySQL application to a modern **React + Vite frontend, Node.js/Express API, and PostgreSQL database**, while retaining its core citizen and authority workflows.
 
-4. Edit `server/.env` and set `DATABASE_URL`. Example:
+## 🚀 What it does
 
-   ```dotenv
-   DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/infra_alert
-   PGSSL=false
-   PORT=4000
-   SESSION_SECRET=replace-this-with-a-long-random-secret
-   CLIENT_ORIGIN=http://127.0.0.1:5173
-   ```
+### For citizens
+- **Create an account and sign in** to access a personal complaint workspace.
+- **Submit civic complaints** with a category, description, and supporting image.
+- **Attach a location** using browser geolocation, view the resolved address, and adjust the map pin when the device's location estimate is inaccurate.
+- **Track submitted complaints** and see their current status.
+- **Download complaint reports as PDFs**, including available evidence and resolution images.
+- **View resolution evidence** when an authority marks a complaint as solved.
 
-   URL-encode special characters in the database password (for example, `@` becomes `%40`).
+### For authorities
+- **Register and sign in** through the authority workflow.
+- **Review complaints** within the applicable category, department, state, and city scope.
+- **Manage complaint status** using the existing workflow: Pending, In Progress, Solved, and Rejected.
+- **Attach resolution evidence** when resolving a complaint.
 
-5. Create the five application tables by running `server/schema.sql` against the `infra_alert` database. In pgAdmin: select the database, open Query Tool, open `server/schema.sql`, and execute it. Or use:
+### Supporting capabilities
+- Optional **Cloudinary** storage for complaint evidence and resolution images, with local file storage available for local development.
+- **Reverse geocoding** to turn coordinates into a readable address, using a configurable provider.
+- Responsive interface with role-specific pages and form feedback.
 
-   ```powershell
-   psql -U postgres -d infra_alert -f server/schema.sql
-   ```
+> Location precision depends on the device and browser location source. A readable address is an interpretation of the selected coordinates, not a guarantee of an exact doorstep location. Users can adjust the location pin before submission.
 
-6. Install packages at the project root:
+## 🧰 Technology stack
 
-   ```powershell
-   npm install
-   ```
+| Layer | Technologies |
+|---|---|
+| Frontend | React 18, Vite, React Router, CSS |
+| Backend | Node.js, Express |
+| Database | PostgreSQL, `pg` |
+| Authentication | Express sessions, `bcryptjs` password hashing |
+| Image storage | Cloudinary (optional) or local uploads for development |
+| Maps and location | Browser Geolocation API, Leaflet, reverse-geocoding provider |
+| PDF reports | PDFKit |
+| Upload handling | Multer |
 
-7. Run both the API and Vite client:
+## 🏗️ Application architecture
 
-   ```powershell
-   npm run dev
-   ```
+```mermaid
+flowchart TD
+    A[Citizen / Authority] --> B[React + Vite]
+    B -->|HTTP API requests| C[Express API]
+    C --> D[(PostgreSQL)]
+    C --> E[Cloudinary / Local Uploads]
+    C --> F[Reverse Geocoding Provider]
+    C --> G[PDF Report Generation]
+    G --> B
+```
 
-8. Open **http://127.0.0.1:5173**. The API health endpoint is **http://127.0.0.1:4000/api/health**.
+The browser communicates with the Express API. The API owns database access, upload handling, reverse-geocoding requests, authentication/session logic, and PDF generation. Provider secrets belong in the server environment, never in frontend code.
 
-## Cloudinary image storage
+## 🖥️ Run locally
 
-The app already uploads files through the Express backend, so Cloudinary credentials belong only in `server/.env` (never in `client/.env` or React code).
+### Prerequisites
 
-1. Create or sign in to a Cloudinary account at https://cloudinary.com/users/register/free.
-2. Open the Cloudinary Console dashboard and copy the **Cloud name**, **API Key**, and **API Secret** from the account's API credentials section.
-3. Open `server/.env` and set:
+- [Node.js](https://nodejs.org/) **20 or newer** (npm is included)
+- [PostgreSQL](https://www.postgresql.org/download/) **14 or newer**
+- Git (recommended)
+- Optional: a [Cloudinary](https://cloudinary.com/) account for hosted images
+
+### 1. Clone the repository
+
+Replace `YOUR_GITHUB_USERNAME` with your GitHub username after you publish the repository.
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/infra-alert.git
+cd infra-alert
+```
+
+### 2. Create the PostgreSQL database
+
+In pgAdmin, create a database named `infra_alert` with owner `postgres` (or another database user you configure).
+
+Then run `server/schema.sql` against the **`infra_alert`** database. In pgAdmin, select that database, open **Query Tool**, load `server/schema.sql`, and execute it.
+
+The schema creates the application tables:
+
+- `u_register` — citizen accounts
+- `auth_register` — authority accounts
+- `complaint` — complaint records and current status
+- `save_location` — complaint location and related image details
+- `solved_img` — resolution image records
+
+The schema creates a fresh application database structure. It does **not** automatically import historical data from the old MySQL database files.
+
+### 3. Configure the server environment
+
+From the project root, copy the environment template.
+
+**Windows PowerShell:**
+
+```powershell
+Copy-Item server/.env.example server/.env
+```
+
+Open `server/.env` and set your PostgreSQL password and a unique session secret. For example:
+
+```dotenv
+DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/infra_alert
+PGSSL=false
+PORT=4000
+SESSION_SECRET=replace-with-a-long-random-secret
+CLIENT_ORIGIN=http://127.0.0.1:5173
+
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+GEOCODING_PROVIDER=nominatim
+GEOCODING_API_KEY=
+```
+
+Replace `YOUR_PASSWORD` with the password for your PostgreSQL user. URL-encode reserved characters in the password if necessary; for example, `@` becomes `%40`.
+
+### 4. Install dependencies
+
+Run this once from the project root:
+
+```bash
+npm install
+```
+
+### 5. Start the application
+
+```bash
+npm run dev
+```
+
+By default, the development servers use:
+
+- **Frontend:** http://127.0.0.1:5173
+- **API health check:** http://127.0.0.1:4000/api/health
+- **Integration status:** http://127.0.0.1:4000/api/integrations/status
+
+Keep the terminal running while you use the application.
+
+## 🔐 Environment configuration
+
+### Cloudinary image storage (optional)
+
+1. Create or sign in to a Cloudinary account.
+2. Copy the Cloud name, API Key, and API Secret from the Cloudinary Console.
+3. Add them to `server/.env`:
 
    ```dotenv
    CLOUDINARY_CLOUD_NAME=your_cloud_name
@@ -77,53 +174,88 @@ The app already uploads files through the Express backend, so Cloudinary credent
    CLOUDINARY_API_SECRET=your_api_secret
    ```
 
-4. Save the file and restart `npm run dev` (stop it with `Ctrl+C` first).
-5. Open `http://127.0.0.1:4000/api/integrations/status`. When all credentials are loaded, it should say `"imageStorage":"cloudinary"` and `"cloudinaryConfigured":true`.
-6. Sign in as a citizen and submit a complaint with a photo. After a successful upload, the complaint's image URL stored in PostgreSQL will be a Cloudinary HTTPS URL, and the new asset should appear in the Cloudinary Media Library under the `infra-alert` folder.
-7. To test resolution images, sign in as the matching authority and upload the solved/resolution image. It uses the same Cloudinary folder.
+4. Restart the development server and upload a test complaint image.
+5. Verify the uploaded asset appears in Cloudinary and that the complaint retains its image URL.
 
-The backend uses Cloudinary's authenticated server-side Node SDK. If credentials are configured but the upload fails, the app now reports a Cloudinary-specific error instead of quietly falling back to a local file. If all three credential values are blank, uploads continue to use `server/uploads` locally.
+Keep the API Secret on the server. Never add it to React code or commit it to Git. If Cloudinary is not configured, the application can use local uploads for development.
 
-Official documentation: https://cloudinary.com/documentation/node_integration. Never commit `server/.env` or share the API Secret. The original project archive contained exposed provider credentials; rotate those credentials in the provider dashboards before reusing either account.
+### Geolocation and reverse geocoding
 
-## Geolocation and readable address
+- The browser requests location permission from the user. A device may provide approximate coordinates, especially on desktop computers.
+- The location picker lets the user adjust the map pin when the initial reading is incorrect.
+- `GEOCODING_PROVIDER=nominatim` uses the public Nominatim / OpenStreetMap service for low-volume, user-triggered demonstrations. Follow the [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/) and preserve the required OpenStreetMap attribution.
+- `GEOCODING_PROVIDER=gomaps` can be used with a valid provider API key if configured for your account.
+- `GEOCODING_PROVIDER=none` keeps the coordinates without making a reverse-geocoding request.
 
-The complaint form opens a map and tries to center it on the device's current location. The user can move the pin, confirm the point, review the reverse-geocoded address, and submit the selected coordinates with the complaint. Browser location is only an initial map suggestion; the user-confirmed pin is the saved location.
+A third-party address service cannot make inaccurate device coordinates accurate; verify the point on the map before submitting a complaint.
 
-- Use the app on `http://127.0.0.1:5173` or `http://localhost:5173`. Browser geolocation is generally permitted on localhost and HTTPS, but not arbitrary insecure HTTP origins.
-- Set `GEOCODING_PROVIDER=locationiq` and `LOCATIONIQ_API_KEY` in `server/.env` to use LocationIQ for reverse geocoding. Keep the key server-side; never add it to client environment variables or commit it. The same key powers authority directions: authorities can use their device location first or enter a starting address, see a LocationIQ driving route in the app, and open it in Google Maps or OpenStreetMap. Directions remain accessible from complaint IDs in every status, including solved complaints.
-- If `GEOCODING_PROVIDER` is blank, the app uses LocationIQ when `LOCATIONIQ_API_KEY` is set, otherwise GoMaps when its key is set, and otherwise Nominatim.
-- LocationIQ's free tier has daily/rate limits and terms of use; check the current plan and commercial-use restrictions before deployment. Address and route suggestions may be incomplete, so users must verify the complaint pin and authorities should verify directions.
-- The default **Nominatim / OpenStreetMap** provider requires no API key and is intended only for modest, user-triggered development/demo usage. The implementation queues requests to about one per second, caches results in memory for a day, and displays attribution.
-- Nominatim is a community service with limited capacity. Read and follow its usage policy: https://operations.osmfoundation.org/policies/nominatim/. Do not use it for bulk or high-traffic geocoding. For production/more users, use a suitable geocoding provider or a self-hosted service.
-- To use GoMaps instead, set `GEOCODING_PROVIDER=gomaps` and add a fresh `GEOCODING_API_KEY` in `server/.env`. Use a newly generated/restricted key and check that your provider plan allows reverse geocoding. Restart the server afterward.
-- To disable reverse lookups while still allowing coordinates to be captured, set `GEOCODING_PROVIDER=none`.
+## 🧪 Useful commands
 
-Example `server/.env` settings for the no-key local demo configuration:
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start the API and Vite frontend together |
+| `npm run check` | Check server JavaScript syntax and build the frontend |
+| `npm run build` | Build the frontend for production |
+| `npm run start` | Start the Express server |
 
-```dotenv
-GEOCODING_PROVIDER=nominatim
-GEOCODING_API_KEY=
-LOCATIONIQ_API_KEY=
+Runtime verification requires PostgreSQL to be running and `server/.env` to be correctly configured. Cloudinary uploads require valid Cloudinary credentials.
+
+## 📁 Project structure
+
+```text
+infra-alert/
+├── client/
+│   ├── src/
+│   │   ├── components/     # Shared UI and location picker
+│   │   ├── pages/          # Home, auth, citizen and authority pages
+│   │   ├── data/           # Department/category data
+│   │   ├── api.js           # Frontend API client
+│   │   ├── App.jsx          # Routes and role-protected pages
+│   │   └── styles.css       # Frontend styles
+│   └── package.json
+├── server/
+│   ├── src/
+│   │   ├── routes/          # Authentication, complaints, location APIs
+│   │   ├── middleware/      # Authentication and upload middleware
+│   │   ├── lib/             # Password and media helpers
+│   │   ├── db.js            # PostgreSQL connection
+│   │   └── index.js         # Express server
+│   ├── schema.sql
+│   └── .env.example
+├── package.json
+└── README.md
 ```
 
-After editing `.env`, stop the development servers with `Ctrl+C` and rerun `npm run dev`. Check `http://127.0.0.1:4000/api/integrations/status`; for this setup it should report `"geocoding":"nominatim"` and `"reverseGeocodingConfigured":true`.
+## 🔒 Security and responsible use
 
-## Data and schema notes
+- Do not commit `.env`, provider secrets, session secrets, private uploads, or real citizen data.
+- Use strong local credentials and rotate any provider keys that may have been exposed.
+- Obtain consent before requesting a user's location or uploading their images.
+- Avoid exposing sensitive complaint details or exact citizen locations through public endpoints.
+- Before public production deployment, review HTTPS, secure cookie settings, CSRF/session protections, rate limiting, input validation, access controls, upload limits, backups, provider terms, and privacy requirements.
+- Public Nominatim is not intended for bulk or high-traffic geocoding.
 
-- `server/schema.sql` creates a fresh PostgreSQL schema; it does not recover the old MySQL `.ibd` files or copy historical data automatically.
-- The schema uses the table and column names referenced by the original PHP files and avoids adding unverified columns. The exact original MySQL DDL was not included in the ZIP, so a byte-for-byte schema conversion (including unknown column types, defaults and constraints) is not possible from the PHP files alone.
-- New passwords are stored as bcrypt hashes. Existing plaintext passwords can still authenticate once; on successful login, the API upgrades that user's password to a hash.
-- Complaint IDs retain the `C101`, `C102`, … format. Status values are `Pending`, `In Progress`, `Solved`, and `Rejected`.
-- Authority complaint lists are scoped to the authority's category, department, state, and city, matching the original application logic.
+Infra-Alert is a portfolio and learning project. A local development setup is not, by itself, a production security or availability audit.
 
-## Main workflows
+## 🗺️ Potential next steps
 
-1. Create citizen account → citizen login → choose a category → submit complaint with evidence and a user-confirmed map location.
-2. Citizen dashboard lists their own complaints and offers PDF report downloads and a link to the resolution image when solved.
-3. Create authority account for a specific category, department, state and city → authority login → see matching pending complaints → move to In Progress, reject, or upload a resolution image and mark Solved.
+- Citizen-confirmed complaint closure and reopening flow
+- Duplicate complaint suggestions and community support
+- Kannada and English interface options
+- Notification preferences and status alerts
+- Aggregated neighbourhood civic issue map
+- Automated tests for API workflows and permission boundaries
 
-## Checks
+## 👋 About
 
-- `npm run check` checks server syntax and builds the Vite client.
-- Database/API runtime checks require PostgreSQL to be installed, started, and configured with `server/.env`.
+Built as a full-stack civic-tech project to explore how modern web technologies can make issue reporting, location sharing, evidence collection, and complaint tracking easier to follow.
+
+If you find a bug or have an improvement idea, open a GitHub issue with steps to reproduce it. Please do not include real citizen information, credentials, or private complaint evidence.
+
+---
+
+<div align="center">
+
+**Infra-Alert — making civic issues easier to report and track.**
+
+</div>
